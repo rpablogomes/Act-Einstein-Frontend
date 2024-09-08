@@ -9,7 +9,10 @@ const Location: React.FC<location> = ({ location }) => {
   return (
     <>
       <div className="location">
-        Ecommerce {">"} <a>{location}</a>
+        <p>
+          {" "}
+          Ecommerce {">"} {location}
+        </p>
       </div>
     </>
   );
