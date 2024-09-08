@@ -15,9 +15,9 @@ function App() {
     <BrowserRouter>
       <PersistGate loading={null} persistor={persistor}>
         <Provider store={store}>
-          <Promotion />
-          <Header />
           <div className="App">
+            <Promotion />
+            <Header />
             <Routes>
               <Route path="/" element={<ClothesList />} />
               <Route path="/home" element={<ClothesList />} />
