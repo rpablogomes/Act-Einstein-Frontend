@@ -1,0 +1,200 @@
+.container-products-list {
+  display: grid;
+  grid-template-columns: 1fr 3fr;
+  gap: 20px;
+  padding: 20px;
+  a {
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 24.5px;
+    text-align: left;
+    color: #0e1422;
+  }
+
+  .categories {
+    border: 0.1px solid #474b57;
+    width: 248px;
+    height: fit-content;
+    padding: 0 24px 24px 24px;
+    gap: 40px;
+    border-radius: 6px;
+    border: 1px 0px 0px 0px;
+
+    ul {
+      list-style: none;
+      padding: 0;
+
+      li {
+        margin-bottom: 12px;
+        display: flex;
+        align-items: center;
+        border-bottom: 1px solid #e9e9eb;
+        width: 100%;
+        height: 49px;
+        padding: 12px 4px 12px 4px;
+        gap: 8px;
+        border-radius: 8px 0px 0px 0px;
+        border: 0px 0px 1px 0px;
+
+        input[type="checkbox"] {
+          margin-right: 10px;
+          width: 16px;
+          height: 16px;
+          border: 1px solid #0e1422;
+          border-radius: 2px;
+          background-color: #fff;
+          cursor: pointer;
+        }
+
+        p::first-letter {
+          text-transform: uppercase;
+        }
+
+        label {
+          font-size: 14px;
+          font-weight: 400;
+          line-height: 24.5px;
+          text-align: left;
+          color: #0e1422;
+          cursor: pointer;
+          text-decoration: none;
+          a::first-letter {
+            text-transform: uppercase;
+          }
+
+          &:hover {
+            color: #007bff;
+          }
+        }
+      }
+    }
+  }
+
+  .container-products-and-pagination {
+    .products {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      grid-gap: 20px;
+      padding: 0 20px 20px 20px;
+      .product-item {
+        width: 180px;
+        height: Hug (434px);
+        padding: 16px 8px;
+        gap: 24px;
+        border-radius: 4px 0px 0px 0px;
+        margin: auto;
+        img {
+          width: 150px;
+          height: 200px;
+          padding: 0px 5px 0px 6px;
+          gap: 10px;
+          border-radius: 4px 0px 0px 0px;
+        }
+        .info-itens {
+          .title {
+            height: 24px;
+            width: 100%;
+            font-size: 14px;
+            font-weight: 500;
+            line-height: 24.5px;
+            text-align: left;
+            margin: 10px 0;
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            word-wrap: break-word;
+          }
+
+          .price-and-stock {
+            height: 24px;
+            display: grid;
+            grid-template-columns: auto auto;
+            margin: 10px 0;
+            align-items: left;
+            justify-content: left;
+            gap: 20px;
+            .price {
+              font-size: 14px;
+              font-weight: 400;
+              line-height: 24.5px;
+              text-align: center;
+              margin: auto 0;
+            }
+
+            .stock {
+              border: 0.1px solid #e6e7e8;
+              padding: 0 2px;
+              height: 20px;
+              margin: auto;
+              border-radius: 16px;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              text-transform: uppercase;
+              width: 100%;
+              font-size: 12px;
+              font-weight: 500;
+            }
+          }
+          .add-button {
+            width: 100%;
+            height: 26px;
+            cursor: pointer;
+            border-radius: 4px;
+            background: #0e1422;
+            margin: 10px 0 0 0;
+            font-size: 13px;
+            color: #ffffff;
+          }
+        }
+      }
+    }
+    .pagination {
+      margin-top: 20px;
+      text-align: center;
+      display: flex;
+      gap: 10px;
+      justify-content: center;
+      align-items: center;
+      width: fit-content;
+      height: 44px;
+      padding: 2px;
+      border-radius: 4px;
+      border: 1px solid #e9e9eb;
+      margin: 10px auto 20px auto;
+
+      > button {
+        background: white;
+        border: none;
+        cursor: pointer;
+        width: 40px;
+        height: 40px;
+        padding: 8px;
+        gap: 10px;
+        margin: auto 8px;
+        border-radius: 4px;
+        color: 74B57;
+
+        &.active {
+          background: #f6f6f6;
+          color: 74B57;
+        }
+      }
+
+      .left-bottom {
+        transform: rotate(180deg);
+      }
+
+      > img {
+        width: 24px;
+        height: 24px;
+        padding: 6;
+        gap: 10px;
+        cursor: pointer;
+        border: none;
+      }
+    }
+  }
+}
