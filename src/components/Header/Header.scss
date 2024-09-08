@@ -1,28 +1,5 @@
-$background-color: white;
-$border-width: 25px;
-$border-height: 3px;
-
-@mixin respond-to($breakpoint) {
-  @if $breakpoint == small {
-    @media (max-width: 768px) {
-      @content;
-    }
-  }
-}
-
-> div {
-  background-color: black;
-  width: 1116px;
-  height: 24px;
-  top: 8px;
-  left: 120px;
-  padding: 0px 438.5px 0px 411.5px;
-  gap: 8px;
-  opacity: 0px;
-}
-
 header {
-  background-color: $background-color;
+  background-color: #ffffff;
   height: 84px;
   display: grid;
   justify-content: center;
@@ -30,7 +7,7 @@ header {
   grid-template-columns: 30% 35% 35%;
   padding: 10px;
 
-  > div:nth-of-type(1) {
+  .logo {
     display: grid;
     grid-template-columns: 40px auto;
     gap: 12px;
@@ -49,7 +26,6 @@ header {
 
     > h1 {
       grid-column: 2;
-      opacity: 1;
       font-size: 20px;
       font-weight: 800;
       line-height: 27.32px;
@@ -59,7 +35,7 @@ header {
     }
   }
 
-  > div:nth-child(2) {
+  .nav-bar {
     > .nav-links {
       display: flex;
       justify-content: center;
@@ -69,8 +45,8 @@ header {
       margin: auto;
       gap: 20px;
 
-      > li {
-        > a {
+      li {
+        a {
           font-size: 14px;
           font-weight: 500;
           line-height: 24.5px;
@@ -78,30 +54,35 @@ header {
           text-align: left;
           text-decoration: none;
         }
+        &:hover {
+          transform: scale(1.1);
+        }
+        &:active {
+          transform: scale(0.9);
+        }
       }
     }
   }
 
-  > div:nth-of-type(3) {
+  .search-container {
     display: flex;
     align-items: center;
     gap: 10px;
     width: auto;
     margin: auto 10px auto auto;
+    img {
+      margin: 8px;
+      max-width: auto;
+      height: auto;
+    }
 
-    > div:nth-child(1) {
+    .input-search {
       border: 1px solid #ccc;
       border-radius: 4px;
       background-color: #fff;
       max-width: auto;
       display: flex;
       align-items: center;
-
-      > img {
-        max-width: 20px;
-        height: auto;
-        margin-right: 8px;
-      }
 
       > input {
         border: none;
@@ -113,70 +94,8 @@ header {
         background-color: transparent;
       }
     }
-
     > img {
-      margin: auto;
-      max-width: auto;
-      height: auto;
-    }
-  }
-
-  ≈ .navbar {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-
-    .logo {
-      font-size: 24px;
-    }
-
-    .nav-links {
-      display: flex;
-      list-style: none;
-
-      li {
-        margin: auto;
-        a {
-          font-family: Inter;
-          font-size: 14px;
-          font-weight: 500;
-          line-height: 24.5px;
-          text-align: left;
-        }
-      }
-    }
-
-    .border {
-      display: none;
       cursor: pointer;
-
-      div {
-        width: $border-width;
-        height: $border-height;
-        margin: 5px;
-        transition: all 0.3s ease;
-      }
-    }
-  }
-
-  @include respond-to(small) {
-    .nav-links {
-      display: none;
-      flex-direction: column;
-      width: 100%;
-      position: absolute;
-      top: 60px;
-      left: 0;
-      background-color: $background-color;
-      padding: 10px;
-
-      &.active {
-        display: flex;
-      }
-    }
-
-    .border {
-      display: block;
     }
   }
 }

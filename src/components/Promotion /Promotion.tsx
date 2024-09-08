@@ -2,8 +2,8 @@ import "./Promotion.scss";
 
 const Promotion = () => {
   return (
-    <div>
-      <a>Get 25% OFF on your first order.</a>
+    <div className="promotion-bar">
+      <p>Get 25% OFF on your first order.</p>
     </div>
   );
 };
