@@ -6,6 +6,7 @@ import paginationsClothesList from "./ListOfProducts/paginationsProductsListRedu
 import { persistStore, persistReducer } from "redux-persist";
 import storage from "redux-persist/lib/storage"; // defaults to localStorage
 import ProductsListReducer from "./ListOfProducts/ProductsListReducer";
+import invoiceReducer from "./CartOfProducts/invoiceReducer";
 
 const persistConfig = {
   key: "root",
@@ -19,6 +20,7 @@ export const store = configureStore({
     productList: ProductsListReducer,
     categories: categoriesReducer,
     pagination: paginationsClothesList,
+    invoice: invoiceReducer
   },
 });
 

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import "./CartOfProducts.scss";
 import Location from "../Location/Location";
 import { useDispatch, useSelector } from "react-redux";
@@ -7,14 +7,16 @@ import {
   removeProduct,
   updateQuantity,
 } from "../../redux/CartOfProducts/cartOfIdsOfProductsReducer";
+import { getInvoice } from "../../redux/CartOfProducts/invoiceReducer";
 
 const Cart: React.FC = () => {
   const dispatch: AppDispatch = useDispatch();
   const cart = useSelector((state: RootState) => state.cart.cart);
+  const invoice = useSelector((state: RootState) => state.invoice);
 
-  const totalPrice = 100;
-  const shippingCost = 100;
-  const tax = 200;
+  useEffect(() => {
+    dispatch(getInvoice(cart));
+  }, [cart, dispatch]);
 
   return (
     <>
@@ -87,21 +89,23 @@ const Cart: React.FC = () => {
           <h2>Invoice Summary</h2>
           <div className="summary-item">
             <span>Subtotal:</span>
-            <span className="value">R${totalPrice.toFixed(2)}</span>
+            <span className="value">
+              R${invoice.totalPriceProducts.toFixed(2)}
+            </span>
           </div>
           <div className="summary-item">
             <span>Shipping Cost:</span>
-            <span className="value">R${shippingCost.toFixed(2)}</span>
+            <span className="value">R${invoice.shippingCost.toFixed(2)}</span>
           </div>
           <div className="summary-item">
             <span>Tax:</span>
-            <span className="value">R${tax.toFixed(2)}</span>
+            <span className="value">R${invoice.taxes.toFixed(2)}</span>
           </div>
           <div className="line" />
           <div className="summary-item total">
             <span className="value">Total:</span>
             <span className="value">
-              R${(totalPrice + shippingCost + tax).toFixed(2)}
+              R${invoice.totalWithAllCosts.toFixed(2)}
             </span>
           </div>
           <button className="checkout-button">Checkout</button>
